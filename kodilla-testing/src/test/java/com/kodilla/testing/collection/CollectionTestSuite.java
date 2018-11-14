@@ -4,7 +4,11 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
 import java.util.ArrayList;
+
+import static org.junit.Assert.*;
+
 public class CollectionTestSuite {
     @Before
     public void before(){
@@ -22,17 +26,17 @@ public class CollectionTestSuite {
         Assert.assertEquals(oddNumbersExterminator.exterminate(testList), testList);
     }
     @Test
-    public void testOddNumbersExterminatorNormalList(){
+    public void testOddNumbersExterminatorNormalList() {
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         ArrayList<Integer> testList = new ArrayList<>();
         ArrayList<Integer> evenList = new ArrayList<>();
         System.out.println("Normal list test");
-        for(int i=0; i<10; i++){
+        for (int i = 0; i < 10; i++) {
             testList.add(i);
-            if(i%2!=0){
+            if (i % 2 != 0) {
                 evenList.add(i);
             }
         }
-        Assert.assertEquals(oddNumbersExterminator.exterminate(testList),evenList);
+        Assert.assertEquals(oddNumbersExterminator.exterminate(testList), evenList);
     }
 }
