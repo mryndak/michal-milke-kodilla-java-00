@@ -24,3 +24,11 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+kodilla-tasks/
+kodilla-testing/src/main/resources/
+kodilla-testing/src/test/java/com/kodilla/testing/forum/tdd/
+kodilla-testing/src/test/resources/
+modules/
+src/main/resources/static/
+src/main/resources/templates/
+src/test/resources/

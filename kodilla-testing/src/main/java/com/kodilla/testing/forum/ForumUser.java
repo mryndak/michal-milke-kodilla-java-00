@@ -1,0 +1,61 @@
+package com.kodilla.testing.forum;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class ForumUser {
+    private String name;
+    private String realName;
+    private ArrayList<ForumPost> posts = new ArrayList<ForumPost>();
+    private LinkedList<ForumComment> comments = new LinkedList<ForumComment>();
+
+    public ForumUser (String name, String realName) {
+//        name visible on forum
+        this.name = name;
+//        real name of the user
+        this.realName = realName;
+    }
+
+
+    public void addComment(ForumPost thePost, String author, String commentBody) {
+//        do nothing
+    }
+
+    public int getPostQuantity() {
+//        return 1 temporarily
+        return 100;
+    }
+
+    public ForumPost getPost(int postNumber) {
+//        returning null means that the operation was unsuccsessful
+        return null;
+    }
+
+    public boolean removePost(ForumPost thePost) {
+//        return true temporarily
+        return true;
+    }
+
+    public boolean removeComment(ForumComment theComment) {
+//        return true temporarilly
+        return true;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getRealName() {
+        return realName;
+    }
+
+    public int getPostsQuantity() {
+        return posts.size();
+    }
+
+    public void addPost(String author, String postBody) {
+        ForumPost thePost = new ForumPost(postBody, author);
+        posts.add(thePost);
+    }
+
+}

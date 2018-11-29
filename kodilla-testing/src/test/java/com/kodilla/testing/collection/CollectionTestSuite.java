@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.*;
+//import static org.junit.Assert.*;
 
 public class CollectionTestSuite {
     @Before
@@ -19,6 +19,7 @@ public class CollectionTestSuite {
         System.out.println("Test end");
     }
     @Test
+//   Empty list test is checking whether collection is empty
     public void testOddNumbersExterminatorEmptyList(){
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         ArrayList<Integer> testList = new ArrayList<>();
@@ -26,6 +27,7 @@ public class CollectionTestSuite {
         Assert.assertEquals(oddNumbersExterminator.exterminate(testList), testList);
     }
     @Test
+    //   Filled list test is checking whether collection consists of even numbers
     public void testOddNumbersExterminatorNormalList() {
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         ArrayList<Integer> testList = new ArrayList<>();
