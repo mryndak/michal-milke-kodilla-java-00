@@ -23,6 +23,7 @@ public class ForumPost {
         if (o == null || getClass() != o.getClass()) return false;
 
         ForumPost forumPost = (ForumPost) o;
+        if (!postBody.equals(forumPost.postBody)) return false;
         return author.equals(forumPost.author);
 
     }

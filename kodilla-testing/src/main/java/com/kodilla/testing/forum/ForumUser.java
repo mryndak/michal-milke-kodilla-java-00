@@ -9,35 +9,48 @@ public class ForumUser {
     private ArrayList<ForumPost> posts = new ArrayList<ForumPost>();
     private LinkedList<ForumComment> comments = new LinkedList<ForumComment>();
 
-    public ForumUser (String name, String realName) {
-//        name visible on forum
+    public ForumUser(String name, String realName) {
+        //name visible on forum
         this.name = name;
-//        real name of the user
+        //real name of the user
         this.realName = realName;
     }
 
-
-    public void addComment(ForumPost thePost, String author, String commentBody) {
-//        do nothing
+    public void addPost(String author, String postBody){
+        // do nothing
     }
 
-    public int getPostQuantity() {
-//        return 1 temporarily
+    public void addComment(ForumPost thePost, String author, String commentBody){
+        // do nothing
+    }
+
+    public int getPostsQuantity(){
+        // return 100 temporarily
         return 100;
     }
 
-    public ForumPost getPost(int postNumber) {
-//        returning null means that the operation was unsuccsessful
+    public int getCommentsQuantity(){
+        // return 100 temporarily
+        return 100;
+    }
+
+    public ForumPost getPost(int postNumber){
+        // returning null means that the operation was unsuccessful
         return null;
     }
 
-    public boolean removePost(ForumPost thePost) {
-//        return true temporarily
+    public ForumComment getComment(int commentNumber){
+        // returning null means that the operation was unsuccessful
+        return null;
+    }
+
+    public boolean removePost(ForumPost thePost){
+        // return true temporarily
         return true;
     }
 
-    public boolean removeComment(ForumComment theComment) {
-//        return true temporarilly
+    public boolean removeComment(ForumComment theComment){
+        // return true temporarily
         return true;
     }
 
@@ -48,14 +61,4 @@ public class ForumUser {
     public String getRealName() {
         return realName;
     }
-
-    public int getPostsQuantity() {
-        return posts.size();
-    }
-
-    public void addPost(String author, String postBody) {
-        ForumPost thePost = new ForumPost(postBody, author);
-        posts.add(thePost);
-    }
-
 }
