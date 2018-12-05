@@ -54,10 +54,9 @@ public class ShapeCollectorTestSuite {
         //When
         boolean result = collector.addFigure(circle);
 
-//        boolean result = collector.addFigure(circle);
 
         //Then
-//         Assert.assertTrue(result);
+//        Assert.assertTrue(result);
     }
 
     @Test
