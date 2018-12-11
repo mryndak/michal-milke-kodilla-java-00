@@ -7,7 +7,7 @@ public class ShapeCollector {
 
     public boolean addFigure(Shape shape) {
         shapes.add(shape);
-        return false;
+        return true;
     }
 
     public boolean removeFigure(Shape shape) {
@@ -18,7 +18,7 @@ public class ShapeCollector {
         return shapes.get(f);
     }
 
-    public ArrayList<Shape> getShapes(Circle circle) {
+    public ArrayList<Shape> getShapes() {
         return shapes;
     }
 }
