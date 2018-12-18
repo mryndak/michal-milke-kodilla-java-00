@@ -8,12 +8,11 @@ public class TestingMain {
 
         System.out.println("Wprowadzenie do testowania Moduł 6");
 
-        SimpleUser simpleUser = new SimpleUser("theForumUser", "Jefrey", "Mobbins", "35");
+        SimpleUser simpleUser = new SimpleUser("theForumUser", "Jefrey");
 
         String result = simpleUser.getUsername();
         String result1 = simpleUser.getRealName();
-        String result2 = simpleUser.getSurname();
-        String result3 = simpleUser.getAge();
+
 
         if (result.equals("theForumUser")) {
             System.out.println("test 0 OK");
@@ -28,28 +27,13 @@ public class TestingMain {
             System.out.println("Error 1 !!!");
         }
 
-        if (result2.equals("Mobbins")) {
-            System.out.println("test 2 OK");
 
-        } else {
-            System.out.println("Error 2 !!!");
 
-        }
-
-        if (result3.equals("35")) {
-            System.out.println("test 3 OK");
-
-        } else {
-            System.out.println("Error 3 !!!");
-        }
             System.out.println(" ");
             System.out.println(simpleUser.getUsername() + " real name:");
             System.out.println(simpleUser.getRealName());
             System.out.println(simpleUser.getUsername() + " real surname:");
-            System.out.println(simpleUser.getSurname());
-            System.out.println(simpleUser.getUsername() + " age:");
-            System.out.println(simpleUser.getAge());
-            System.out.println(" ");
+
 /*
             Calculator calculator = new Calculator();
             double addResult = calculator.add(180, 20);
