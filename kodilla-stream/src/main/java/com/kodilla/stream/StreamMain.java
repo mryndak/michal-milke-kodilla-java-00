@@ -5,15 +5,37 @@ package com.kodilla.stream;
 //import com.kodilla.stream.lambda.SaySomething;
 //import com.kodilla.stream.beautifier.PoemBeautifier;
 //import com.kodilla.stream.iterate.NumbersGenerator;
+import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumUser;
 import com.kodilla.stream.people.Person;
 import com.kodilla.stream.book.BookDirectory;
 
+import java.time.LocalDate;
+import java.time.Year;
+import java.util.Map;
+import static java.time.temporal.ChronoUnit.YEARS;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 public class StreamMain {
     public static void main(String[] args) {
-        BookDirectory theBookDirectory = new BookDirectory();
-        theBookDirectory.getList().stream()
-                .filter(book -> book.getYearOfPublication() > 2005)
+
+        Forum forum = new Forum();
+
+        Map<Integer, ForumUser> theResultMapOfUsers = forum.getTheForumUserList().stream()
+                .filter(forumUser -> forumUser.getGender() == 'M')
+                .filter(forumUser -> forumUser.getNumberOfPosts()> 0)
+                .filter(forumUser -> YEARS.between(forumUser.getDateOfBirth(), LocalDate.now()) >= 20)
+                .collect(Collectors.toMap(ForumUser :: getUserId, forumUser -> forumUser ));
+
+        System.out.println("# elements: " + theResultMapOfUsers.size());
+        theResultMapOfUsers.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue())
                 .forEach(System.out::println);
+//        BookDirectory theBookDirectory = new BookDirectory();
+//        theBookDirectory.getList().stream()
+//                .filter(book -> book.getYearOfPublication() > 2005)
+//                .forEach(System.out::println);
 //        Person.getList().stream()
 //                .map(s -> s.toUpperCase())
 //                .forEach(System.out::println);
