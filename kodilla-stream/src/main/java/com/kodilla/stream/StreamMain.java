@@ -31,6 +31,21 @@ public class StreamMain {
                 .map(s -> s.charAt(5))
                 .forEach(System.out::println);
 
+        System.out.println(" ");
+
+        Person.getList().stream()
+                .filter(s -> s.length() > 16)
+                .forEach(System.out::println);
+
+        System.out.println(" ");
+
+        Person.getList().stream()
+                .map(String::toUpperCase)
+                .filter(s -> s.length() > 11)
+                .map(s -> s.substring(0, s.indexOf(' ') + 2) + ".")
+                .filter(s -> s.substring(0, 1).equals("M"))
+                .forEach(System.out::println);
+
 //        System.out.println("Welcome to module 7 - Stream");
 //        Processor processor = new Processor();
 //        ExecuteSaySomething executeSaySomething = new ExecuteSaySomething();
