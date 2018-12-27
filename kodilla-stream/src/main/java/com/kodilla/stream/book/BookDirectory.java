@@ -1,4 +1,4 @@
-package com.kodilla.stream;
+package com.kodilla.stream.book;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,3 +20,4 @@ public final class BookDirectory {
         return new ArrayList<>(theBookList);
     }
 }
+

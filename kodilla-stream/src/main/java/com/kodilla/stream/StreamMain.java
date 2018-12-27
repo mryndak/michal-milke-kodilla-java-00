@@ -6,45 +6,51 @@ package com.kodilla.stream;
 //import com.kodilla.stream.beautifier.PoemBeautifier;
 //import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.people.Person;
+import com.kodilla.stream.book.BookDirectory;
 
 public class StreamMain {
     public static void main(String[] args) {
-        Person.getList().stream()
-                .map(s -> s.toUpperCase())
+        BookDirectory theBookDirectory = new BookDirectory();
+        theBookDirectory.getList().stream()
+                .filter(book -> book.getYearOfPublication() > 2005)
                 .forEach(System.out::println);
+//        Person.getList().stream()
+//                .map(s -> s.toUpperCase())
+//                .forEach(System.out::println);
+//
+//        System.out.println(" ");
+//
+//        Person.getList().stream()
+//                .map(s -> s.toLowerCase())
+//                .forEach(System.out::println);
+//
+//        System.out.println(" ");
+//
+//        Person.getList().stream()
+//                .map(s -> s.charAt(3))
+//                .forEach(System.out::println);
+//
+//        System.out.println(" ");
+//
+//        Person.getList().stream()
+//                .map(s -> s.charAt(5))
+//                .forEach(System.out::println);
+//
+//        System.out.println(" ");
+//
+//        Person.getList().stream()
+//                .filter(s -> s.length() > 16)
+//                .forEach(System.out::println);
+//
+//        System.out.println(" ");
+//
+//        Person.getList().stream()
+//                .map(String::toUpperCase)
+//                .filter(s -> s.length() > 11)
+//                .map(s -> s.substring(0, s.indexOf(' ') + 2) + ".")
+//                .filter(s -> s.substring(0, 1).equals("M"))
+//                .forEach(System.out::println);
 
-        System.out.println(" ");
-
-        Person.getList().stream()
-                .map(s -> s.toLowerCase())
-                .forEach(System.out::println);
-
-        System.out.println(" ");
-
-        Person.getList().stream()
-                .map(s -> s.charAt(3))
-                .forEach(System.out::println);
-
-        System.out.println(" ");
-
-        Person.getList().stream()
-                .map(s -> s.charAt(5))
-                .forEach(System.out::println);
-
-        System.out.println(" ");
-
-        Person.getList().stream()
-                .filter(s -> s.length() > 16)
-                .forEach(System.out::println);
-
-        System.out.println(" ");
-
-        Person.getList().stream()
-                .map(String::toUpperCase)
-                .filter(s -> s.length() > 11)
-                .map(s -> s.substring(0, s.indexOf(' ') + 2) + ".")
-                .filter(s -> s.substring(0, 1).equals("M"))
-                .forEach(System.out::println);
 
 //        System.out.println("Welcome to module 7 - Stream");
 //        Processor processor = new Processor();
