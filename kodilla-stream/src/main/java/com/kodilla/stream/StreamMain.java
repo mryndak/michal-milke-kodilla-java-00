@@ -28,6 +28,9 @@ public class StreamMain {
                 .filter(forumUser -> YEARS.between(forumUser.getDateOfBirth(), LocalDate.now()) >= 20)
                 .collect(Collectors.toMap(ForumUser :: getUserId, forumUser -> forumUser ));
 
+        //        Map<String, ForumUser> stringForumUserMap = forum.getTheForumUserList().contains(forum);
+
+        //System.out.println(theResultMapOfUsers);
         System.out.println("# elements: " + theResultMapOfUsers.size());
         theResultMapOfUsers.entrySet().stream()
                 .map(entry -> entry.getKey() + ": " + entry.getValue())
