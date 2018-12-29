@@ -35,6 +35,15 @@ public class StreamMain {
         theResultMapOfUsers.entrySet().stream()
                 .map(entry -> entry.getKey() + ": " + entry.getValue().getUserName())
                 .forEach(System.out::println);
+        theResultMapOfUsers.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue().getNumberOfPosts())
+                .forEach(System.out::println);
+        theResultMapOfUsers.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue().getGender())
+                .forEach(System.out::println);
+        theResultMapOfUsers.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue().getUserId())
+                .forEach(System.out::println);
 //        BookDirectory theBookDirectory = new BookDirectory();
 //        theBookDirectory.getList().stream()
 //                .filter(book -> book.getYearOfPublication() > 2005)
