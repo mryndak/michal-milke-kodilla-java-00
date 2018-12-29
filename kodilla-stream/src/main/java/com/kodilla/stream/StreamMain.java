@@ -33,7 +33,7 @@ public class StreamMain {
         //System.out.println(theResultMapOfUsers);
         System.out.println("# elements: " + theResultMapOfUsers.size());
         theResultMapOfUsers.entrySet().stream()
-                .map(entry -> entry.getKey() + ": " + entry.getValue())
+                .map(entry -> entry.getKey() + ": " + entry.getValue().getUserName())
                 .forEach(System.out::println);
 //        BookDirectory theBookDirectory = new BookDirectory();
 //        theBookDirectory.getList().stream()
