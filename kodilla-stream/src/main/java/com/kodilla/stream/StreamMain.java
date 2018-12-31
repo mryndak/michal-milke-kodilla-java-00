@@ -26,7 +26,7 @@ public class StreamMain {
                 .filter(forumUser -> forumUser.getGender() == 'M')
                 .filter(forumUser -> forumUser.getNumberOfPosts()> 0)
                 .filter(forumUser -> YEARS.between(forumUser.getDateOfBirth(), LocalDate.now()) >= 20)
-                .collect(Collectors.toMap(ForumUser :: getUserId, forumUser -> forumUser ));
+                .collect(Collectors.toMap(ForumUser::getUserId, forumUser -> forumUser ));
 
         //        Map<String, ForumUser> stringForumUserMap = forum.getTheForumUserList().contains(forum);
 
