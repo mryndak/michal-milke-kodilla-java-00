@@ -17,16 +17,16 @@ public class ForumPost {
         return author;
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (!(o instanceof ForumPost)) return false;
-//        ForumPost forumPost = (ForumPost) o;
-//        return postBody.equals(forumPost.postBody) &&
-//                author.equals(forumPost.author);
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ForumPost)) return false;
+        ForumPost forumPost = (ForumPost) o;
+        return postBody.equals(forumPost.postBody) &&
+                author.equals(forumPost.author);
+    }
 
-    //    @Override
+//        @Override
 //    public boolean equals(Object o) {
 //        if (this == o) return true;
 //        if (!(o instanceof ForumPost)) return false;
@@ -36,16 +36,16 @@ public class ForumPost {
 //        if (!postBody.equals(forumPost.postBody)) return false;
 //        return author.equals(forumPost.author);
 //    }
-    //    @Override
+//        @Override
 //    public boolean equals(Object o) {
-////        if (this == o) return true;
+//        if (this == o) return true;
 //        if (o == null || getClass() != o.getClass()) return false;
 //
 //        ForumPost forumPost = (ForumPost) o;
 //        if (!postBody.equals(forumPost.postBody)) return false;
 //        return author.equals(forumPost.author);
-//
-//    }
+
+
 
     @Override
     public int hashCode() {
