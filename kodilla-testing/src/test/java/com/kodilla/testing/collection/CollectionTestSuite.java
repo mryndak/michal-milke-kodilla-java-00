@@ -20,16 +20,22 @@ public class CollectionTestSuite {
     }
     @Test
 //   Empty list test is checking whether collection is empty
+
+        //Given
     public void testOddNumbersExterminatorEmptyList(){
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+        //When
         ArrayList<Integer> testList = new ArrayList<>();
         System.out.println("Empty list test");
+        //Then
         Assert.assertEquals(oddNumbersExterminator.exterminate(testList), testList);
     }
     @Test
     //   Filled list test is checking whether collection consists of even numbers
+        //Given
     public void testOddNumbersExterminatorNormalList() {
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+        //When
         ArrayList<Integer> testList = new ArrayList<>();
         ArrayList<Integer> evenList = new ArrayList<>();
         System.out.println("Normal list test");
@@ -39,6 +45,7 @@ public class CollectionTestSuite {
                 evenList.add(i);
             }
         }
+        //Then
         Assert.assertEquals(oddNumbersExterminator.exterminate(testList), evenList);
     }
 }

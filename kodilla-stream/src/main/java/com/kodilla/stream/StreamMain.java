@@ -30,7 +30,7 @@ public class StreamMain {
 
         //        Map<String, ForumUser> stringForumUserMap = forum.getTheForumUserList().contains(forum);
 
-        //System.out.println(theResultMapOfUsers);
+        System.out.println(theResultMapOfUsers);
         System.out.println("# elements: " + theResultMapOfUsers.size());
         theResultMapOfUsers.entrySet().stream()
                 .map(entry -> entry.getKey() + ": " + entry.getValue().getUserName())
