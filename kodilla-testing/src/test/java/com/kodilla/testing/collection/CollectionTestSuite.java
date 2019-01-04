@@ -43,6 +43,8 @@ public class CollectionTestSuite {
             testList.add(i);
             if (i % 2 != 0) {
                 evenList.add(i);
+
+                System.out.println(testList.get(i));
             }
         }
         //Then
