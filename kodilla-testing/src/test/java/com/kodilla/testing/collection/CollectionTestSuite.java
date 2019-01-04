@@ -21,7 +21,7 @@ public class CollectionTestSuite {
     @Test
 //   Empty list test is checking whether collection is empty
 
-        //Given
+    //Given
     public void testOddNumbersExterminatorEmptyList(){
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         //When
@@ -32,7 +32,7 @@ public class CollectionTestSuite {
     }
     @Test
     //   Filled list test is checking whether collection consists of even numbers
-        //Given
+    //Given
     public void testOddNumbersExterminatorNormalList() {
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         //When
