@@ -8,6 +8,8 @@ public class Application {
                 new BookOrderRepository());
 
         productOrderService.process(orderRequest);
+        System.out.println(productOrderService.process(orderRequest));
+        //System.out.println(productOrderService.process(1));
 
     }
 }

@@ -1,13 +1,14 @@
-package com.kodilla.testing.weather.mock;
+package com.kodilla.testing.weather;
 
 import com.kodilla.testing.weather.stub.Temperatures;
 import com.kodilla.testing.weather.stub.WeatherForecast;
 import org.junit.Assert;
 import org.junit.Test;
+
 import java.util.HashMap;
 
-import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class WeatherForecastTestSuite {
 
@@ -30,6 +31,6 @@ public class WeatherForecastTestSuite {
 
         //Then
         Assert.assertEquals(5,quantityOfSensors);
-        System.out.println(temperaturesMap);
+        System.out.println("temperatures in marked regions are: " + temperaturesMap);
     }
 }
