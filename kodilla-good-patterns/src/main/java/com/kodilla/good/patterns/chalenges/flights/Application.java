@@ -7,5 +7,6 @@ public class Application {
         System.out.println(FlightSearcher.searchByDepartureAirport("Skierniewice"));
         System.out.println(FlightSearcher.searchForConnectingFlights("Warsaw", "London",
                 "New York"));
+        System.out.println(FlightSearcher.searchForConnectingFlights("Rzeszow", "London", "Skierniewice"));
     }
 }

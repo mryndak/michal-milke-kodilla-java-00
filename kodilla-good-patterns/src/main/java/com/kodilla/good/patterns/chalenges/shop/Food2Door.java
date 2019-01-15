@@ -1,5 +1,5 @@
 package com.kodilla.good.patterns.chalenges.shop;
 
-public interface Shop {
+public interface Food2Door {
     boolean process(Item item);
 }

@@ -1,7 +1,7 @@
 package com.kodilla.good.patterns.chalenges.shop;
 
 public class OrderProcessor {
-    public void processOrder(Shop shop, Item item) {
+    public void processOrder(Food2Door shop, Item item) {
         boolean ordered = shop.process(item);
         if(ordered) {
             System.out.println("Your order is beeing created...");

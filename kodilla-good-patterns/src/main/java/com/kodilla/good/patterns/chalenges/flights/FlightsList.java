@@ -11,6 +11,7 @@ public final class FlightsList {
         theFlightsList.add(new Flight("London", "Rzeszow"));
         theFlightsList.add(new Flight("Oslo", "Moscow"));
         theFlightsList.add(new Flight("Moscow", "Skierniewice"));
+        theFlightsList.add(new Flight("Rzeszow", "Skierniewice"));
         theFlightsList.add(new Flight("London", "Beijing"));
         theFlightsList.add(new Flight("Krakow", "Delhi"));
 
