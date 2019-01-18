@@ -5,16 +5,15 @@ import java.math.BigDecimal;
 public final class Country {
 
     private final String countryName;
-    private final String bigDecimalInString;
+    private final BigDecimal peopleQuantity;
 
-    public Country(final String countryName, final String bigDecimalInString) {
+    public Country(final String countryName, final BigDecimal peopleQuantity) {
         this.countryName = countryName;
-        this.bigDecimalInString = bigDecimalInString;
+        this.peopleQuantity = peopleQuantity;
     }
 
-    public BigDecimal getCountryPeopleQuantity() {
-        BigDecimal countryPoepleQuantity = new BigDecimal(bigDecimalInString);
-        return countryPoepleQuantity;
+    public BigDecimal getPeopleQuantity() {
+        return peopleQuantity;
 
     }
 
