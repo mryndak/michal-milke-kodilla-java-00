@@ -113,7 +113,7 @@ public class StreamMain {
 //        poemBeautifier.beautify("*-*", "SetTitle", ((decoration, toBeDecorated) -> decoration + toBeDecorated.toLowerCase() + decoration));
 //        poemBeautifier.beautify("<>", "SetTitle", ((decoration, toBeDecorated) -> decoration + toBeDecorated.replace('T', 't') + decoration));
 
-        //System.out.println("Using Stream to generate even numbers from 0 to 20");
-        //NumbersGenerator.generateEven(200);
+//        System.out.println("Using Stream to generate even numbers from 0 to 20");
+//        NumbersGenerator.generateEven(200);
     }
 
