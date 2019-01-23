@@ -1,0 +1,142 @@
+package com.kodilla.spring.portfolio;
+
+public class Board {
+    private TaskList toDoList;
+    private TaskList inProgressList;
+    private TaskList doneList;
+
+    public Board() {
+    }
+
+    public Board(TaskList toDoList, TaskList inProgressList, TaskList doneList) {
+        this.toDoList = toDoList;
+        this.inProgressList = inProgressList;
+        this.doneList = doneList;
+    }
+
+    public Board(TaskList toDoList, TaskList inProgressList) {
+        this.toDoList = toDoList;
+        this.inProgressList = inProgressList;
+    }
+
+    public TaskList getToDoList() {
+        return toDoList;
+    }
+
+    public TaskList getInProgressList() {
+        return inProgressList;
+    }
+
+    public TaskList getDoneList() {
+        return doneList;
+    }
+}
+
+package com.kodilla.spring.portfolio;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+
+@Configuration
+public class BoardConfig {
+
+    @Autowired
+
+    @Bean(name = "toDoList")
+    @Scope("prototype")
+    public TaskList getToDoList() {
+        return new TaskList();
+    }
+
+    @Bean(name = "inProgressList")
+    @Scope("prototype")
+    public TaskList getInProgressList() {
+        return new TaskList();
+    }
+
+    @Bean(name = "doneList")
+    @Scope("prototype")
+    public TaskList getDoneList() {
+        return new TaskList();
+    }
+
+    @Bean
+    public Board board() {
+        return new Board(getToDoList(), getInProgressList(), getDoneList());
+    }
+}
+
+package com.kodilla.spring.portfolio;
+
+import org.springframework.stereotype.Component;
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
+public class TaskList {
+    private final List<String> tasks;
+
+    public TaskList() {
+        tasks = new ArrayList<>();
+    }
+
+    public void addTaskTotheList(String task) {
+
+        tasks.add(task);
+    }
+
+    public String getTaskFromTheList(int index) {
+        return tasks.get(index);
+    }
+}
+
+package com.kodilla.spring.portfolio;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class BoardTestSuite {
+    @Test
+    public void testTaskAdd() {
+        //Given
+        ApplicationContext context =
+                new AnnotationConfigApplicationContext("com.kodilla.spring");
+        Board board = context.getBean(Board.class);
+
+        TaskList toDoList = board.getToDoList();
+        TaskList inProgressList = board.getInProgressList();
+        TaskList doneList = board.getDoneList();
+
+        toDoList.addTaskTotheList("belfer");
+        inProgressList.addTaskTotheList("naked truth");
+        doneList.addTaskTotheList("surrender");
+
+        //When
+        String toDoTask = toDoList.getTaskFromTheList(0);
+        String inProgressTask = inProgressList.getTaskFromTheList(0);
+        String doneTask = doneList.getTaskFromTheList(0);
+
+        //Then
+        Assert.assertEquals("belfer", toDoTask);
+        Assert.assertEquals("naked truth", inProgressTask);
+        Assert.assertEquals("surrender", doneTask);
+
+        System.out.println(" ");
+        System.out.println("The problem lies here:\n" + "Result of comparison of expected/results:\n");
+        System.out.println(" ");
+        System.out.println("To do Task should return " + toDoTask);
+        System.out.println(" ");
+        System.out.println("In Progress Task should return " + inProgressTask);
+        System.out.println(" ");
+        System.out.println("Done Task Task should return " + doneTask);
+    }
+}
