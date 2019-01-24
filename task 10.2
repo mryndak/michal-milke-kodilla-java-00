@@ -1,0 +1,88 @@
+package com.kodilla.spring.calculator;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class CalculatorTestSuite {
+
+    @Test
+    public void testCalculator() {
+        //Given
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+        Calculator calculator = context.getBean(Calculator.class);
+        //When
+        double addResult = calculator.addition(7.3, 2.7);
+        double subResult = calculator.subtract(5.4, 0.4);
+        double multiResult = calculator.multiply(3.2, 4.5); //14.4
+        double diviResult = calculator.divide(14.4, 3.2);
+
+        System.out.println("Addition test result of summing " +
+                "two grades a + b equals: " + calculator.addition(7.3, 2.7));
+        System.out.println("Subtraction test result of subtraction of " +
+                "two grades a - b equals: " + calculator.subtract(5.4, 0.4));
+        System.out.println("Multiplication test result of multiplying of " +
+                "two grades a * b equals: " + calculator.multiply(3.2, 4.5));
+        System.out.println("Division test result of dividing of " +
+                "two grades a / b equals: " + calculator.divide(14.4, 3.2));
+
+        Assert.assertEquals(10.0,addResult,.0);
+        Assert.assertEquals(5.0,subResult,.0);
+        Assert.assertEquals(14.4,multiResult,.0);
+        Assert.assertEquals(4.5,diviResult,.0);
+
+    }
+    }
+    
+    package com.kodilla.spring.calculator;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Display {
+    public void displayValue(double val) {
+        System.out.println(val);
+    }
+}
+
+package com.kodilla.spring.calculator;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+
+@Component
+public final class Calculator {
+    @Autowired
+    private Display display;
+
+    public double addition(double a, double b) {
+        display.displayValue(a);
+        display.displayValue(b);
+        return a + b;
+    }
+
+    public double subtract(double a, double b) {
+        display.displayValue(a);
+        display.displayValue(b);
+        return a - b;
+    }
+
+    public double multiply(double a, double b) {
+        display.displayValue(a);
+        display.displayValue(b);
+        return a * b;
+    }
+
+    public double divide(double a, double b) {
+        display.displayValue(a);
+        display.displayValue(b);
+        return a / b;
+    }
+}

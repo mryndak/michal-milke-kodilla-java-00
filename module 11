@@ -1,0 +1,99 @@
+package com.kodilla.patterns.singleton;
+
+public final class Logger {
+    private String lastLog = "";
+    private static Logger loggerInstance = null;
+
+    private Logger() {
+
+    }
+
+    public static Logger getInstance() {
+        if (loggerInstance == null) {
+            loggerInstance = new Logger();
+
+        }
+
+        return loggerInstance;
+
+    }
+
+    public void log(String log) {
+        lastLog = log;
+        System.out.println("Log: [" + " helloł Mateuszu mentorze:)" + "]");
+    }
+
+    public String getLastLog() {
+        return lastLog;
+    }
+}
+
+package com.kodilla.patterns.singleton;
+
+public final class SettingsFileEngine {
+    private static SettingsFileEngine settingsFileEngineInstance = null;
+    private String fileName = "";
+
+    private SettingsFileEngine() {
+    }
+
+    public static SettingsFileEngine getInstance() {
+        if (settingsFileEngineInstance == null) {
+            settingsFileEngineInstance = new SettingsFileEngine();
+        }
+        return settingsFileEngineInstance;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void open(final String fileName) {
+        this.fileName = fileName;
+        System.out.println("Opening the settings file");
+    }
+
+    public void close() {
+        this.fileName = "";
+        System.out.println("Closing the settings file");
+    }
+
+    public boolean loadSettings() {
+        System.out.println("Loading settings from file");
+        return true;
+    }
+
+    public boolean saveSettings() {
+        System.out.println("Saving settings to file");
+        return true;
+    }
+}
+package com.kodilla.patterns.singleton;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+public class LoggerTestSuite {
+    private static int testCounter = 0;
+
+    @Before
+    public  void beforeEveryTest() {
+        testCounter++;
+        System.out.println("Preparing to execute test #" + testCounter);
+
+    }
+
+    @Test
+    public void testGetLastLog() {
+        //Given
+        Logger.getInstance().log("that's the content of the log");
+
+        //When
+        String result = Logger.getInstance().getLastLog();
+
+        //Then
+        Assert.assertEquals("that's the content of the log", result);
+    }
+}
+
