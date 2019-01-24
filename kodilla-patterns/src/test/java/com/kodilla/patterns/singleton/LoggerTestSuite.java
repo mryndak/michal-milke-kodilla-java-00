@@ -18,11 +18,12 @@ public class LoggerTestSuite {
     public void testGetLastLog() {
         //Given
         Logger.getInstance().log("that's the content of the log");
+        Logger.getInstance().log("last log");
 
         //When
         String result = Logger.getInstance().getLastLog();
 
         //Then
-        Assert.assertEquals("that's the content of the log", result);
+        Assert.assertEquals("last log", result);
     }
 }
