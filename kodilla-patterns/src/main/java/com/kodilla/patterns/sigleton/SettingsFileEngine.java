@@ -1,18 +1,20 @@
-package com.kodilla.patterns.sigleton;
+package com.kodilla.patterns.singleton;
 
 public final class SettingsFileEngine {
     private static SettingsFileEngine settingsFileEngineInstance = null;
     private String fileName = "";
 
     private SettingsFileEngine() {
-
     }
 
     public static SettingsFileEngine getInstance() {
         if (settingsFileEngineInstance == null) {
-            settingsFileEngineInstance = new SettingsFileEngine();
+            synchronized(SettingsFileEngine.class) {
+                if (settingsFileEngineInstance == null) {
+                    settingsFileEngineInstance = new SettingsFileEngine();
+                }
+            }
         }
-
         return settingsFileEngineInstance;
     }
 
@@ -36,7 +38,7 @@ public final class SettingsFileEngine {
     }
 
     public boolean saveSettings() {
-        System.out.println("Saving settings to the file");
+        System.out.println("Saving settings to file");
         return true;
     }
 }
